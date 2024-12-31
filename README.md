@@ -1,5 +1,5 @@
 # hp-ilo-exporter-alert-rules
-Prometheus alert rules for hp-ilo-exporter
+Prometheus alert rules YAML for hp-ilo-exporter
 
 This is main alert rules for monitor Bare Metal HP Servers via iLO, Prometheus and [ilo-exporter](https://hub.docker.com/r/mauvesoftware/ilo_exporter).
 
