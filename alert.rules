@@ -1,0 +1,53 @@
+  # HP ilo_chassis_temperature_current > 80
+  - alert: HPiLoChassisTemperatureHight
+    expr: ilo_chassis_temperature_current > 80
+    for: 5m
+    labels:
+      severity: error
+    annotations:
+      summary: "Temperature now on instance {{ $labels.instance }}, probe {{ $labels.name }}) is {{ $value }}"
+      description: "Temperature over 80, now is {{ $value }}"
+
+
+  # HP ilo_chassis_fan_healthy < 1
+  - alert: HPiLoChassisFanHealthy
+    expr: ilo_chassis_fan_healthy < 1
+    for: 5m
+    labels:
+      severity: error
+    annotations:
+      summary: "Fan error now on (instance {{ $labels.instance }})"
+      description: "Fan error, now is {{ $value }}"
+
+
+  # HP ilo_power_supply_healthy < 1
+  - alert: HPiLoPowerSupplyHealthy
+    expr: ilo_power_supply_healthy < 1
+    for: 5m
+    labels:
+      severity: error
+    annotations:
+      summary: "Power supply error now on (instance {{ $labels.instance }})"
+      description: "Power supply error, now is {{ $value }}"
+
+
+  # HP ilo_processor_healthy < 1
+  - alert: HPiLoCPUHealthy
+    expr: ilo_processor_healthy < 1
+    for: 5m
+    labels:
+      severity: error
+    annotations:
+      summary: "CPU error now on (instance {{ $labels.instance }})"
+      description: "CPU error, now is {{ $value }}"
+
+
+  # HP ilo_memory_dimm_healthy < 1
+  - alert: HPiLoMemoryHealthy
+    expr: ilo_memory_dimm_healthy < 1
+    for: 5m
+    labels:
+      severity: error
+    annotations:
+      summary: "Memory dimm error now on (instance {{ $labels.instance }})"
+      description: "Memory dimm error, now is {{ $value }}"
